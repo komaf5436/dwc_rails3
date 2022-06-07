@@ -50,3 +50,8 @@ bundle installコマンドを実行する。
 deviseはGemをインストールした後に、改めてインストール手順が必要となる。  
 rails g devise:install  
 上記のコマンド実行によってdeviseを動作させるために必要な設定ファイルが作成され、使用できるようになる。
+
+## deviseのモデル作成
+通常モデルを作成する場合、rails g model モデル名とコマンドを実行していたが、  
+deviseでモデルを作成する場合、下記のコマンドで実行する。  
+rails g devise User
