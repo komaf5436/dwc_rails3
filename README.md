@@ -57,3 +57,7 @@ deviseでモデルを作成する場合、下記のコマンドで実行する�
 rails g devise User  
 マイグレーションファイルが作成されたら、ファイルに保存したいカラムを追加し、  
 rails db:migrateコマンドを実行する。
+
+## deviseのviewファイル作成
+サインアップとサインインのフォームでカスタマイズしたい場合は下記のコマンドを実行する。  
+rails g devise:views
