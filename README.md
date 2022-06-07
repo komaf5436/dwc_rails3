@@ -1,24 +1,35 @@
-# README
+# アプリケーションを完成させよう2
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 代表的なデータ型
+### integer
+数値(整数)
 
-Things you may want to cover:
+### decimal
+ 数値(精度の高い小数)
+ 
+### float
+数値(浮動小数)
 
-* Ruby version
+### string
+文字(短い文字列)
 
-* System dependencies
+### text
+文字(長い文字列)
 
-* Configuration
+### date
+日付
 
-* Database creation
+### datetime
+日時
 
-* Database initialization
+### time
+時刻
 
-* How to run the test suite
+### timestamp
+タイムスタンプ
 
-* Services (job queues, cache servers, search engines, etc.)
+### binary
+バイナリ
 
-* Deployment instructions
-
-* ...
+### boolean
+真偽
