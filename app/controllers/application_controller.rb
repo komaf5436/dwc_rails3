@@ -2,6 +2,11 @@ class ApplicationController < ActionController::Base
   # 下記のように記述することで、devise利用の機能(ユーザー登録、ログイン認証など)が使用される前にconfigure_...メソッドが実行される。
   before_action :configure_permitted_parameters, if: :devise_controller?
   
+  # after_sign...メソッドによって、サインイン後の遷移先を設定することが出来る。
+  def after_sign_in_path_for(resource)
+    about_path
+  end
+  
   # protectedは呼び出された他のコントローラからも参照することが出来る。
   protected
   
