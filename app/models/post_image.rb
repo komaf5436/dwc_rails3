@@ -6,12 +6,14 @@ class PostImage < ApplicationRecord
   belongs_to :user
   
   # get_imageメソッドをPostImageモデルの中に記述することで、カラムを呼び出すようにこの処理(メソッド)を呼び出すことが出来る。
+  # Railsで画像のサイズ変更を行えるよう下記のように書き換える。
+  # 画像が設定されていない場合、app/assets/imagesに格納されているno_image.jpgがデフォルト画像としてActiveStorageに格納し、画像を表示される。
   def get_image
-    if image.attached?
-      image
-    else
-      'no_image.jpg'
+    unless image.attached?
+      file_path = Rails.root.join('app/assets/images/no_image.jpg')
+      image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
     end
+    image
   end
   
 end
