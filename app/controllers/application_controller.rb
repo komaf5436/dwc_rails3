@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   # after_sign_in...メソッドによって、サインイン後の遷移先を設定することが出来る。
   def after_sign_in_path_for(resource)
-    about_path
+    post_images_path
   end
 
   # after_sign_out...メソッドによって、サインアウト後の遷移先を設定することが出来る。
