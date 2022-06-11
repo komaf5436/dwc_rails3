@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/show'
+  get 'users/edit'
   devise_for :users
   # root to:と記述することで、/にアクセスした場合、自分の作成したページに設定することが出来る。
   root to: "homes#top"
