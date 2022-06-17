@@ -6,7 +6,12 @@ Rails.application.routes.draw do
   # resourcesメソッドは、ルーティングを一括して自動生成してくれる機能。
   # onlyオプションを使用することで、生成するルーティングを限定してくれる。
   # 今回の場合、new,create,index,showのアクション以外は、ルーティングは行われない。
-  resources :post_images, only:[:new, :create, :index, :show, :destroy]
+  resources :post_images, only:[:new, :create, :index, :show, :destroy] do
+    # コメントは、投稿画像に対してコメントされるので、post_commentsは、post_imagesに結び付く。
+    # 親のresourcesで指定したコントローラ名に、子のresourcesで指定したコントローラ名が続くURLが生成される。このような親子関係を「ネストする」という。
+    # これにより、params[:post_image_id]でPostImageのidが取得できるようになる。
+    resources :post_comments, only:[:create]
+  end
   resources :users, only:[:show, :edit, :update]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
