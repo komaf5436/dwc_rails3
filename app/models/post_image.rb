@@ -4,6 +4,8 @@ class PostImage < ApplicationRecord
 
   # PostImageは、Userに属しているという関係からPostImageモデルでは下記のように記述する。
   belongs_to :user
+  # PostImage１つに対して、PostCommentを複数個持っているという1:Nの関係になっているので下記のようになる。
+  has_many :post_comments, dependent: :destroy
   
   # get_imageメソッドをPostImageモデルの中に記述することで、カラムを呼び出すようにこの処理(メソッド)を呼び出すことが出来る。
   # Railsで画像のサイズ変更を行えるよう下記のように書き換える。

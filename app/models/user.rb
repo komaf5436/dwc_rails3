@@ -7,6 +7,8 @@ class User < ApplicationRecord
   # UserモデルとPostImageモデルを関連付けるため下記のように記述する
   # User１つに対して、PostImageを複数個持っているという1:Nの関係になっているので下記のようになる。
   has_many :post_images, dependent: :destroy
+  # 上記同様
+  has_many :post_comments, dependent: :destroy
 
   # 下記の記述により、profile_imageという名前でActiveStorageでプロフィール画像を保存できるよう設定する。
   has_one_attached :profile_image
