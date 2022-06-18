@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     # 親のresourcesで指定したコントローラ名に、子のresourcesで指定したコントローラ名が続くURLが生成される。このような親子関係を「ネストする」という。
     # これにより、params[:post_image_id]でPostImageのidが取得できるようになる。
     resources :post_comments, only:[:create, :destroy]
+    # 単数形にすることによって、/:idが含まれなくなる
+    resource :favorites, only:[:create, :destroy]
   end
   resources :users, only:[:show, :edit, :update]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
