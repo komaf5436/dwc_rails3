@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     # コメントは、投稿画像に対してコメントされるので、post_commentsは、post_imagesに結び付く。
     # 親のresourcesで指定したコントローラ名に、子のresourcesで指定したコントローラ名が続くURLが生成される。このような親子関係を「ネストする」という。
     # これにより、params[:post_image_id]でPostImageのidが取得できるようになる。
-    resources :post_comments, only:[:create]
+    resources :post_comments, only:[:create, :destroy]
   end
   resources :users, only:[:show, :edit, :update]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
