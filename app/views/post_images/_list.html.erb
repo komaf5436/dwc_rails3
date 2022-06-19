@@ -13,3 +13,6 @@
   <p><%= link_to "#{post_image.post_comments.count}コメント", post_image_path(post_image.id) %></p>
 </div>
 <% end %>
+
+<!--下記のような記述により長い文章を複数のページへ分割することが可能。-->
+<%= paginate post_images %>

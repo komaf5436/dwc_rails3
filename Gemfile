@@ -56,3 +56,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
+
+# 下記のgemを導入することによって一つの長い文章を複数のページに分割し表示することが出来る
+gem 'kaminari','~> 1.2.1'

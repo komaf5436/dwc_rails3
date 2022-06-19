@@ -10,7 +10,7 @@ class PostImagesController < ApplicationController
     # @post_image.user_idは、この投稿のuser_idとしてcurrent_user.idの値を代入するという意味
     # current_userは、ログイン中のユーザー情報を取得することが出来る。この場合、ログインユーザーのidを取得することが出来る。
     @post_image.user_id = current_user.id
-    # データが保存されれば一覧ページへ出来なければ投稿ページへ遷移する
+    # データが保存されれば一覧ページへ出来なければ投稿ページへ遷移する。
     if @post_image.save
       redirect_to post_images_path
     else
@@ -19,7 +19,8 @@ class PostImagesController < ApplicationController
   end
 
   def index
-    @post_images = PostImage.all
+    # kaminariをインストールしたことによりpageメソッドが使用可能になる。
+    @post_images = PostImage.page(params[:page])
   end
 
   def show
